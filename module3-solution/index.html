@@ -13,7 +13,7 @@
 
       <input type="text" ng-model="list.searchTerm" placeholder="Search for...">
       <button type="button" ng-click="list.narrowItDown();">Narrow It Down For Me!</button>
-      <found-items found="list" title={{list.title}}></found-items>
+      <found-items found="list" title={{list.title}} on-remove="list.removeItem(index)"></found-items>
       {{list.message}}
     </div>
 

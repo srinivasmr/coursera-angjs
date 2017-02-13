@@ -15,7 +15,8 @@
       templateUrl: 'listMenu.html',
       scope:{
         list: '<found',
-        title: '@title'
+        title: '@title',
+        onRemove: '&'
 
       }
 
