@@ -4,17 +4,17 @@
   angular.module('NarrowItDownApp',[])
   .controller('NarrowItDownController', NarrowItDownController)
   .service('MenuSearchService', MenuSearchService)
-  .directive('listMenu', ListMenu);
+  .directive('foundItems', FoundItems);
 
   NarrowItDownController.$inject=['MenuSearchService'];
   MenuSearchService.$inject=['$http'];
 
-  function ListMenu(){
+  function FoundItems(){
     var ddo = {
       restrict:'E',
       templateUrl: 'listMenu.html',
       scope:{
-        list: '<itemList',
+        list: '<found',
         title: '@title'
 
       }
@@ -36,6 +36,7 @@
         menu.items = response;
         if(menu.items.length == 0){
           menu.message = "Nothing found";
+          menu.title='';
         }else{
           menu.message = "";
           menu.title=menu.items.length + title;
